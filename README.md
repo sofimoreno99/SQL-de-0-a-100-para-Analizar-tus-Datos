@@ -19,10 +19,21 @@ El lenguaje SQL se divide en tres subconjuntos de instrucciones, según la funci
 
 # DML Manipulación de datos
 
-SELECT: Recupera datos de la base de datos.
-INSERT: Añade nuevas filas de datos a la base de datos.
-DELETE: Suprime filas de datos de la base de datos.
-UPDATE: Modifica datos existentes en la base de datos.
+- SELECT: Recupera datos de la base de datos.
+La sintaxis básica de SELECT es:
+SELECT lista de campos FROM nombre de la tabla
+
+- INSERT: Añade nuevas filas de datos a la base de datos.
+La sintaxis básica de INSERT ES:
+INSERT INTO nombre de la tabla (lista de campos) values(lista de valores)
+
+- DELETE: Suprime filas de datos de la base de datos.
+La sintaxis básica de DELETE es:
+DELETE FROM nombre de la tabla WHERE condición que deben cumplir los registros que queremos borrar.
+
+- UPDATE: Modifica datos existentes en la base de datos.
+La sintaxis básica de UPDATE es:
+UPDATE nombre de la tabla SET nombre del campo = valor nuevo WHERE condición que deben cumplir todos los registros que se modificarán.
 
 # DDL Definición de datos
 
@@ -86,4 +97,88 @@ Nota: el rango admitido es de '-838: 59: 59' a '838: 59: 59'
 - YEAR ()	Un año en formato de dos o cuatro dígitos.
 Nota: Valores permitidos en formato de cuatro dígitos: de 1901 a 2155. Valores permitidos en formato de dos dígitos: 70 a 69, que representan los años de 1970 a 2069
 
+## Objetos de las bases de datos
+
+# Crear una base de datos
+CREATE DATABASE nombre de base de datos
+SHOW DATABASES: para ver todas las bases de datos que tenemos
+USE: para usar una base de dato:
+Sintaxis: USE nombre de base de dato
+
+# Tablas
+
+Sentencias para su creación, modificación y destrucción
+
+- CREATE TABLE
+Sintaxis: CREATE TABLE [dueño de la tabla].[nombre de la tabla]
+(
+[nombre del campo] [tipo del campo](longitud) NULL,
+ ...
+) 
+
+Repasemos los elementos:
+- Dueño de la tabla: Es el usuario que tendrá primariamente todos los derechos sobre la 
+tabla que vamos a crear.
+- Nombre de la tabla: Es el nombre por el que vamos a identificar a la tabla más adelante. 
+Deberá ser único. (otra tabla deberá llamarse distinto)
+- Nombre del campo: Es el nombre que vamos a dar a un campo. Debe ser único dentro de 
+la tabla pero puede repetirse en otras tablas. Mi sugerencia es que al mismo atributo lo 
+llamen siempre igual en todas las tablas en las que aparezca.
+- Tipo del campo: Es el tipo de dato que vamos a guardar en ese campo. Distintos motores 
+de bases de datos los organizan de diferentes maneras.
+
+
+- ALTER TABLE
+Sintaxis: ALTER TABLE [dueño de la tabla].[nombre de la tabla]
+(
+[nombre del campo] [tipo del campo](longitud) NULL,
+ ..)
  
+ Podemos realizar distintas acciones como
+●	ALTER TABLE … RENAME… 
+●	ALTER TABLE … DROP COLUMN… 
+●	ALTER TABLE … DROP PRIMARY KEY…
+●	ALTER TABLE … ADD… 
+●	ALTER TABLE … ADD…AFTER… 
+●	ALTER TABLE … ADD…FIRST; 
+●	ALTER TABLE … ADD…PRIMARY KEY… 
+●	ALTER TABLE … MODIFY COLUMN…
+●	ALTER TABLE … ADD column_name datatype;
+●	ALTER TABLE … DROP column_name;
+●	ALTER TABLE … ADD INDEX [name](column, …);
+●	ALTER TABLE … ADD PRIMARY KEY (column_name,…);
+●	ALTER TABLE … DROP PRIMARY KEY (column_name,…);
+●	ALTER TABLE...MODIFY COLUMN ... INT auto_increment;
+
+  - DROP TABLE
+Sintaxis: DROP TABLE dueño de la tabla.nombre de la tabla
+
+Al borrarla desaparecen tanto los datos como la estructura
+
+- TRUNCATE TABLE
+Sintaxis:TRUNCATE TABLE dueño de la tabla.nombre de la tabla
+
+Se utiliza para borrar todo el contenido de una tabla pero sin tocar la estructura.
+
+# Insertar filas en una tabla
+INSERT INTO… VALUES(…)
+
+INSERT INTO… SET…
+
+
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT 
+LENGHT
+SUBSTR()
+TRIM()
+
+LENGTH, SUBSTR, or TRIM function in a WHERE 
+
