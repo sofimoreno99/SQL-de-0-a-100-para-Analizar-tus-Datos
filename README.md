@@ -22,6 +22,7 @@ El lenguaje SQL se divide en tres subconjuntos de instrucciones, según la funci
 - SELECT: Recupera datos de la base de datos.
 La sintaxis básica de SELECT es:
 SELECT lista de campos FROM nombre de la tabla
+Si escribimos SELECT * FROM nombre de la tabla, se devuelven todos los registros de la tabla. 
 
 - INSERT: Añade nuevas filas de datos a la base de datos.
 La sintaxis básica de INSERT ES:
@@ -97,6 +98,11 @@ Nota: el rango admitido es de '-838: 59: 59' a '838: 59: 59'
 - YEAR ()	Un año en formato de dos o cuatro dígitos.
 Nota: Valores permitidos en formato de cuatro dígitos: de 1901 a 2155. Valores permitidos en formato de dos dígitos: 70 a 69, que representan los años de 1970 a 2069
 
+# Datos de SQL
+
+SQL no es sensible a mayúsculas: SELECT y select funcionan lo mismo.
+
+
 ## Objetos de las bases de datos
 
 # Crear una base de datos
@@ -166,19 +172,51 @@ INSERT INTO… VALUES(…)
 INSERT INTO… SET…
 
 
+# Consultando datos de una tabla
+
+Utilizamos la funcion SELECT, junto con diferentes comandos como: 
+
+- SELECT DISTINCT: se utiliza cuando deseamos obtener simplemente una lista de los valores diferentes (distintos), en una base de datos con duplicados.
+Sintaxis: SELECT DISTINCT lista de campos FROM nombre de tabla; 
+
+- SELECT ...FROM... WHERE: el comando WHERE se utiliza cuando deseamos realizar una consulta que cumpla con uno o mas criterios determinados. 
+Para especificar dos condiciones que deseamos que se cumplan utilizamos el comando AND, la sintaxis es la siguiente: 
+SELECT ... FROM... WHERE.... AND.....
+Para especificar dos condiciones en la que deseamos que por lo menos una se cumpla utilizamos el comando OR, la sintaxis es la siguiente: 
+SELECT ... FROM... WHERE.... OR.....
+
+- SELECT... FROM... WHERE...ORDER BY... ASC/DESC : ORDER BY nos indica como ordenar la consulta. Puede ser ASC- DESC.
+- SELECT... COUNT... WHERE
 
 
+LENGTH(): nos devuelve la longitud de los valores de los campos de texto.
+Sintaxis: SELECT ..., LENGTH(expresion) FROM .... 
 
+SUBSTR(): nos devuelve una subserie de una serie.
+Sintaxis: SUBSTR(expresion,posicion_de_inicio,longitud) 
 
+TRIM(): se utiliza para eliminar un prefijo o sufijo determinado de una cadena. El patrón más común a eliminarse son los espacios en blanco.
+Sintaxis: SELECT TRIM(expresion) AS ... FROM...
 
+CAST(): nos sirve para ransformaR uno o más valores de un tipo de datos a otro.
+Sintaxis: CAST ( Expresion_de_origen AS tipo_de_dato (lenght) ) 
 
+CONCAT(): permite concatenar cadenas, columnas o valores sin límite, de forma que el resultado siempre será una cadena de textos con todos los valos introducidos.
+Sintaxis: CONCAT ( cadena1, cadena2 );
+Si queremos que entre medio de ambas cadenas vaya un espacio podemos colocar la siguiente sintaxis:
+Sintaxis: CONCAT ( cadena1," ", cadena2 );
 
+COALESCE(): ayuda a estimar y devolver el primer valor NO NULO del conjunto de datos o base de datos.
+Sintaxis: COALESCE (expresiones) 
 
-
-SELECT DISTINCT 
-LENGHT
-SUBSTR()
-TRIM()
+CASE(): compara 2 o más valores y devuelve un resultado.
+Sintaxis: case VALORACOMPARAR
+  when VALOR1 then RESULTADO1
+  when VALOR2 then RESULTADO2
+  ...
+  else RESULTADO3
+ end
+ Puedo usar tambien END AS .... especificando la columna donde quiero ver los resultados. 
 
 LENGTH, SUBSTR, or TRIM function in a WHERE 
 
