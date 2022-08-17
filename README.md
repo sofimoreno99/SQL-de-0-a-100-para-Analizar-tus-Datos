@@ -198,7 +198,7 @@ Sintaxis: SUBSTR(expresion,posicion_de_inicio,longitud)
 TRIM(): se utiliza para eliminar un prefijo o sufijo determinado de una cadena. El patrón más común a eliminarse son los espacios en blanco.
 Sintaxis: SELECT TRIM(expresion) AS ... FROM...
 
-CAST(): nos sirve para ransformaR uno o más valores de un tipo de datos a otro.
+CAST(): nos sirve para transformar uno o más valores de un tipo de datos a otro.
 Sintaxis: CAST ( Expresion_de_origen AS tipo_de_dato (lenght) ) 
 
 CONCAT(): permite concatenar cadenas, columnas o valores sin límite, de forma que el resultado siempre será una cadena de textos con todos los valos introducidos.
@@ -218,5 +218,5 @@ Sintaxis: case VALORACOMPARAR
  end
  Puedo usar tambien END AS .... especificando la columna donde quiero ver los resultados. 
 
-LENGTH, SUBSTR, or TRIM function in a WHERE 
+
 
