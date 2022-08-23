@@ -133,6 +133,27 @@ llamen siempre igual en todas las tablas en las que aparezca.
 - Tipo del campo: Es el tipo de dato que vamos a guardar en ese campo. Distintos motores 
 de bases de datos los organizan de diferentes maneras.
 
+Parámetros opcionales:
+ IF NOT EXISTS: Evita que se produzca un error si la tabla existe. Sin embargo, no
+se verifica que la tabla existente tenga una estructura idéntica a la indicada por
+el CREATE TABLE.
+ LIKE: CREATE TABLE ... LIKE crea una tabla vacía basada en la definición de
+otra tabla, incluidos los atributos e índices de columna definidos en la tabla original:
+CREATE TABLE destino_tbl LIKE origen_tbl;
+ NOT NULL | NULL: especifica si se acepta o no que el dato quede vacío. Si no se
+especifica NULL ni NOT NULL, la columna se trata como si se hubiera especificado
+NULL.
+ DEFAULT: Especifica un valor predeterminado para una columna.
+ AUTO_INCREMENT: El valor de la columna se imcrementa automáticamente a
+medida que se suman registros.
+ PRIMARY KEY: se declara implícitamente como NOT NULL.
+ UNIQUE: Un índice UNIQUE crea una restricción tal que todos los valores del
+índice deben ser distintos. Se produce un error si intenta agregar una nueva fila
+con un valor clave que coincide con una fila existente. Un índice UNIQUE sólo
+permite múltiples valores NULL para las columnas que pueden contener NULL.
+ FOREIGN KEY: Permiten realizar referencias cruzadas de datos relacionados
+entre tablas, que ayudan a mantener la coherencia de estos datos dispersos.
+
 
 - ALTER TABLE
 Sintaxis: ALTER TABLE [dueño de la tabla].[nombre de la tabla]
